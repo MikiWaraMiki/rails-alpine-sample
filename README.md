@@ -1,24 +1,43 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 環境構築
 
-Things you may want to cover:
+- `.env`を作成する
 
-* Ruby version
+```
+touch .env
+```
 
-* System dependencies
+- コンテナを作成する
 
-* Configuration
+```
+docker-compose build
+```
 
-* Database creation
+- runnerコンテナに入る
 
-* Database initialization
+```
+docker-compose up -d runner
+docerk-compose exec runner bash
+```
 
-* How to run the test suite
+- bundle install
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+bundle install
+```
 
-* Deployment instructions
+- databaseを作成する
 
-* ...
+```
+rails db:create RAILS_ENV=development
+rails db:create RAILS_ENV=test
+```
+
+## テスト実行
+
+- runnerコンテナで実行
+
+```
+rspec spec/指定したファイル
+```
