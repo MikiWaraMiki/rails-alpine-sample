@@ -18,7 +18,7 @@ docker-compose build
 
 ```
 docker-compose up -d runner
-docerk-compose exec runner bash
+docker-compose exec runner bash
 ```
 
 - bundle install

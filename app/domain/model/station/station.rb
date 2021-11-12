@@ -23,4 +23,10 @@ class Model::Station::Station
     @name = station_name
   end
 
+  def ==(other_object)
+    return false if other_object.nil?
+
+    other_object.class == self.class && other_object.name == name
+  end
+
 end

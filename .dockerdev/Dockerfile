@@ -8,6 +8,7 @@ ARG YARN_VERSION
 
 # 共通の依存関係
 RUN apt-get update -qq \
+  && apt-get install -yq ca-certificates \
   && DEBIAN_FRONTEND=noninteractive apt-get install -yq --no-install-recommends \
     build-essential \
     gnupg2 \
