@@ -41,4 +41,33 @@ RSpec.describe Model::Station::Station, type: :model do
       end
     end
   end
+
+  describe 'equals' do
+    let!(:station) { Model::Station::Station.new('shin_osaka') }
+    context 'nilを渡した場合' do
+      it 'falseを返すこと' do
+        expect(station == nil).to be_falsey
+      end
+    end
+
+    context 'Station以外を渡した場合' do
+      it 'falseを返すこと' do
+        expect(station == 1).to be_falsey
+      end
+    end
+
+    context '駅名が異なるStationを渡した場合' do
+      it 'falseを返すこと' do
+        other = Model::Station::Station.new('tokyo')
+        expect(station == other).to be_falsey
+      end
+    end
+
+    context '駅名が同じStationを渡した場合' do
+      it 'trueを返すこと' do
+        other = Model::Station::Station.new('shin_osaka')
+        expect(station == other).to be_truthy
+      end
+    end
+  end
 end

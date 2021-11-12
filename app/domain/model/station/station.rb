@@ -26,7 +26,9 @@ class Model::Station::Station
   def ==(other_object)
     return false if other_object.nil?
 
-    other_object.class == self.class && other_object.name == name
+    return false unless other_object.class == self.class
+
+    other_object.name == name
   end
 
 end

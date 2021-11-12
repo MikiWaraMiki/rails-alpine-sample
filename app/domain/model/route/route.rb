@@ -12,6 +12,10 @@ class Model::Route::Route
       raise ArgumentError.new('到着駅が入力されていません。')
     end
 
+    if src_station == dest_station
+      raise ArgumentError.new('出発駅と到着駅を同じにすることはできません。')
+    end
+
     @src_station = src_station
     @dest_station = dest_station
   end

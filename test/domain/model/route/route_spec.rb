@@ -24,7 +24,7 @@ RSpec.describe Model::Route::Route, type: :model do
     context '出発駅と到着駅が両方とも入力されている場合' do
       it 'エラーが発生しない' do
         src_station = Model::Station::Station.new('tokyo')
-        dest_station = Model::Station::Station.new('tokyo')
+        dest_station = Model::Station::Station.new('shin_osaka')
 
         expect {Model::Route::Route.new(src_station, dest_station)}.not_to raise_error(ArgumentError)
       end
@@ -32,7 +32,12 @@ RSpec.describe Model::Route::Route, type: :model do
 
     # TODO: 実装
     context '出発駅と到着駅が同じ場合' do
+      it 'エラーが発生しない' do
+        src_station = Model::Station::Station.new('tokyo')
+        dest_station = Model::Station::Station.new('tokyo')
 
+        expect { Model::Route::Route.new(src_station, dest_station) }.to raise_error(ArgumentError)
+      end
     end
   end
 end
