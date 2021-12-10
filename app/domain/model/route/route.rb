@@ -19,4 +19,12 @@ class Model::Route::Route
     @src_station = src_station
     @dest_station = dest_station
   end
+
+  # return Boolean(true or false)
+  def ==(route)
+    # routeがModel::Route::Routeであるか？
+    # src_stationが同じか？
+    # dest_stationが同じか?
+  end
+
 end

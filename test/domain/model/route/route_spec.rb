@@ -40,4 +40,30 @@ RSpec.describe Model::Route::Route, type: :model do
       end
     end
   end
+
+  describe '==の判定' do
+    context '出発駅と到着駅が同じ場合' do
+      it 'trueを返すこと' do
+
+      end
+    end
+
+    context '出発駅が異なる場合' do
+      it 'falseを返すこと' do
+
+      end
+    end
+
+    context '到着駅が異なる場合' do
+      it 'falseを返すこと' do
+
+      end
+    end
+
+    context '比較対象が経路オブジェクトではない場合' do
+      it 'falseを返すこと' do
+
+      end
+    end
+  end
 end
