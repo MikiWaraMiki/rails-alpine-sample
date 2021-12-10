@@ -8,14 +8,14 @@ class Model::Route::RouteTable
       ),
       Model::Route::Route.new(
         Model::Station::Station.new('tokyo'),
-        Model::Station::Station.new('koube')
+        Model::Station::Station.new('himeji')
       )
     ].freeze
   end
 
   def include?(route)
     # @tableにrouteが含まれているかどうか判定
-    @table.include?(nil) # obj == route
+    @table.include?(route) # obj == route
   end
 
   private
