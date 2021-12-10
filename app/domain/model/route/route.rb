@@ -22,9 +22,10 @@ class Model::Route::Route
 
   # return Boolean(true or false)
   def ==(route)
-    # routeがModel::Route::Routeであるか？
-    # src_stationが同じか？
-    # dest_stationが同じか?
+    return false unless route.class == Model::Route::Route
+
+    src_station == route.src_station &&
+      dest_station == route.dest_station
   end
 
 end

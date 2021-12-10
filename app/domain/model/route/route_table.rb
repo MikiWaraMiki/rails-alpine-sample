@@ -15,7 +15,7 @@ class Model::Route::RouteTable
 
   def include?(route)
     # @tableにrouteが含まれているかどうか判定
-    @table.include?(route) # obj == route
+    @table.include?(nil) # obj == route
   end
 
   private
